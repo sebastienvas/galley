@@ -49,9 +49,6 @@ def presubmit(gitUtils, bazel, utils) {
     stage('Code Check') {
       sh('bin/linters.sh')
     }
-    stage('Bazel Tests') {
-      bazel.test('//...')
-    }
   }
 }
 
