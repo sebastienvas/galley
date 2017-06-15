@@ -46,11 +46,8 @@ def presubmit(gitUtils, bazel, utils) {
       bazel.fetch('-k //...')
       bazel.build('//...')
     }
-    stage('Go Build') {
-      sh('bin/init.sh')
-    }
     stage('Code Check') {
-      sh('bin/check.sh')
+      sh('bin/linters.sh')
     }
     stage('Bazel Tests') {
       bazel.test('//...')
