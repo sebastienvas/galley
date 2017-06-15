@@ -39,7 +39,7 @@ mainFlow(utils) {
 }
 
 def presubmit(gitUtils, bazel, utils) {
-  goBuildNode(gitUtils, 'istio.io/pilot') {
+  goBuildNode(gitUtils, 'istio.io/galley') {
     bazel.updateBazelRc()
     stage('Bazel Build') {
       // Use Testing clustercp
